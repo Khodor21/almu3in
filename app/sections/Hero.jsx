@@ -31,7 +31,7 @@ const Hero = () => {
   return (
     <div className="bg-second" style={heroStyle}>
       <Navbar />
-      <div className="flex flex-col gap-20 justify-center items-center h-screen">
+      <div className="flex flex-col gap-20 justify-center items-center h-screen ">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -49,7 +49,7 @@ const Hero = () => {
             transition={{ duration: 1 }}
           >
             <Image
-              className="w-88 h-auto mx-2"
+              className="w-88 h-auto"
               src={Text}
               priority
               alt="book"
