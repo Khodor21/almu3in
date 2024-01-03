@@ -15,52 +15,74 @@ const Hero = () => {
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
   };
-  const textVariants = {
+  const firstVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0 },
   };
-  const logoVariants = {
-    initial: { opacity: 0 },
-    animate: { opacity: 1, transition: { duration: 0.5 } },
+  const secondVariants = {
+    hidden: { opacity: 0, x: 50 },
+    visible: { opacity: 1, x: 0 },
+  };
+  const thirdVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
   };
 
   return (
-    <div className="bg-second h-screen" style={heroStyle}>
+    <div className="bg-second" style={heroStyle}>
       <Navbar />
-      <div className="flex flex-col gap-20 justify-center items-center h-full pb-14">
+      <div className="flex flex-col gap-20 justify-center items-center h-screen">
         <motion.div
-          variants={logoVariants}
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1 }}
           className="flex flex-col gap-6 justify-center items-center"
         >
           <Image className="w-88" src={Book} priority alt="text" layout="/" />
         </motion.div>
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={textVariants}
-          transition={{ duration: 4 }}
-          className="flex flex-col gap-6 items-center"
-        >
-          <Image
-            className="w-88 h-auto"
-            src={Text}
-            priority
-            alt="book"
-            layout="/"
-          />
-          <Link
-            href="/sections"
-            className="bg-second  p-2 rounded w-[50%] text-center text-main"
+        <div className="flex flex-col gap-6 items-center">
+          {" "}
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={firstVariants}
+            transition={{ duration: 1 }}
           >
-            <button id="swissra">التالـــي</button>
-          </Link>
-          <div className="flex gap-12 pt-4 text-second" id="swissra">
-            <p>نصائح</p>
-            <p>تلخيصات</p>
-            <p>مقالات</p>
-            <p>تحدّي</p>
-          </div>{" "}
-        </motion.div>
+            <Image
+              className="w-88 h-auto mx-2"
+              src={Text}
+              priority
+              alt="book"
+              layout="/"
+            />
+          </motion.div>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={secondVariants}
+            transition={{ duration: 2 }}
+          >
+            <Link
+              href="/sections"
+              className="bg-second  p-2 rounded w-[50%] text-center text-main"
+            >
+              <button id="swissra">التالـــي</button>
+            </Link>{" "}
+          </motion.div>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={firstVariants}
+            transition={{ duration: 3 }}
+          >
+            <div className="flex gap-12 pt-4 text-second" id="swissra">
+              <p>نصائح</p>
+              <p>تلخيصات</p>
+              <p>مقالات</p>
+              <p>تحدّي</p>
+            </div>{" "}
+          </motion.div>
+        </div>
       </div>
     </div>
   );
