@@ -54,13 +54,13 @@ const Hero = () => {
           >
             <button id="swissra">التالـــي</button>
           </Link>
+          <div className="flex gap-12 pt-4 text-second" id="swissra">
+            <p>نصائح</p>
+            <p>تلخيصات</p>
+            <p>مقالات</p>
+            <p>تحدّي</p>
+          </div>{" "}
         </motion.div>
-        <div className="flex gap-12 pt-20 text-second" id="swissra">
-          <p>نصائح</p>
-          <p>تلخيصات</p>
-          <p>مقالات</p>
-          <p>تحدّي</p>
-        </div>
       </div>
     </div>
   );
