@@ -4,17 +4,10 @@ import Navbar from "./Navbar";
 import Image from "next/image";
 import Text from "../assets/MainText.svg";
 import Book from "../assets/MainImage.svg";
-import Background from "../assets/Background.jpg";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
 const Hero = () => {
-  const heroStyle = {
-    backgroundImage: `url(${Background.src})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-  };
   const firstVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0 },
@@ -29,7 +22,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="h-screen" style={heroStyle}>
+    <div className="h-screen bg-second ">
       <Navbar />
       <div className="flex flex-col gap-16 justify-center items-center h-full mx-4">
         <motion.div
@@ -41,36 +34,36 @@ const Hero = () => {
           <Image className="w-88" src={Book} priority alt="text" layout="/" />
         </motion.div>
         <div className="flex flex-col gap-6 items-center">
-          {" "}
           <motion.div
+            id="swissra"
+            className="text-center flex flex-col gap-4"
             initial="hidden"
             animate="visible"
             variants={firstVariants}
             transition={{ duration: 1 }}
           >
-            <Image
-              className="w-88 h-auto"
-              src={Text}
-              priority
-              alt="book"
-              layout="/"
-            />
-          </motion.div>
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={secondVariants}
-            transition={{ duration: 2 }}
-          >
-            <Link
-              href="/sections"
-              className="bg-second p-2 rounded text-center text-main"
-            >
-              <button id="swissra">التالـــي</button>
-            </Link>{" "}
+            <h1 className="text-main text-[35px]">مَوقِع المُعِين</h1>
+            <h3 className="text-third text-[21px]">
+              طريقُك إلى عليّين ... يحتاجُ إلى المُعـين
+            </h3>
           </motion.div>
         </div>
-
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={secondVariants}
+          transition={{ duration: 2 }}
+        >
+          <Link
+            width={400}
+            href="/sections"
+            className="bg-main py-2 px-10 rounded text-center text-second"
+          >
+            <button id="swissra" className="text-xl">
+              التالـــي
+            </button>
+          </Link>
+        </motion.div>
         <motion.div
           initial="hidden"
           animate="visible"
@@ -78,7 +71,7 @@ const Hero = () => {
           transition={{ duration: 3 }}
         >
           <div
-            className="flex justify-between min-w-96 pt-4 text-second"
+            className="flex justify-between min-w-96 pt-4 text-third px-6"
             id="swissra"
           >
             <p>نصائح</p>

@@ -33,9 +33,12 @@ const Navbar = () => {
               />
             </div>
             <div>
-              <button className="bg-second rounded-xl shadow-xl text-main flex">
+              <button className="bg-main rounded-xl shadow-xl text-second flex hover:bg-second hover:text-main">
                 <Link href="tel:+961-71708103">
-                  <p className={`my-2 mx-4 flex gap-1`} id="swissra">
+                  <p
+                    className="my-2 md:my-4 mx-4 md:mx-6 flex gap-1 text-lg"
+                    id="swissra"
+                  >
                     قناة التلغرام
                     <PiTelegramLogoLight className="mt-[2px] text-xl" />
                   </p>
