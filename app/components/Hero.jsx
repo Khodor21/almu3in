@@ -31,7 +31,7 @@ const Hero = () => {
   return (
     <div className="h-screen" style={heroStyle}>
       <Navbar />
-      <div className="flex flex-col gap-20 justify-center items-center h-full">
+      <div className="flex flex-col gap-16 justify-center items-center h-full mx-4">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
