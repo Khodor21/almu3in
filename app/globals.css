@@ -13,6 +13,16 @@
   src: url("./fonts/alfont_com_AlFont_com_Swissra-Medium-1.otf");
   font-style: normal;
 }
+@font-face {
+  font-family: "Ibm";
+  src: url("./fonts/IBMPlexSansArabic-SemiBold.ttf");
+  font-style: normal;
+}
+@font-face {
+  font-family: "IbmBold";
+  src: url("./fonts/IBMPlexSansArabic-Bold.ttf");
+  font-style: normal;
+}
 
 html,
 body {
@@ -30,6 +40,12 @@ body {
 }
 #lateef {
   font-family: "Lateef";
+}
+#ibm {
+  font-family: "Ibm";
+}
+#ibmBold {
+  font-family: "IbmBold";
 }
 .next {
   width: 300%;

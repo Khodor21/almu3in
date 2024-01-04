@@ -24,7 +24,7 @@ const Hero = () => {
   return (
     <div className="h-screen bg-second ">
       <Navbar />
-      <div className="flex flex-col gap-16 justify-center items-center h-full mx-4">
+      <div className="flex flex-col gap-10 justify-center items-center h-full mx-4">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -35,15 +35,16 @@ const Hero = () => {
         </motion.div>
         <div className="flex flex-col gap-6 items-center">
           <motion.div
-            id="swissra"
             className="text-center flex flex-col gap-4"
             initial="hidden"
             animate="visible"
             variants={firstVariants}
             transition={{ duration: 1 }}
           >
-            <h1 className="text-main text-[35px]">مَوقِع المُعِين</h1>
-            <h3 className="text-third text-[21px]">
+            <h1 className="text-main text-[32px]" id="swissra">
+              مَوقِع المُعِين
+            </h1>
+            <h3 className="text-third text-[20px]" id="ibmBold">
               طريقُك إلى عليّين ... يحتاجُ إلى المُعـين
             </h3>
           </motion.div>
@@ -59,7 +60,7 @@ const Hero = () => {
             href="/sections"
             className="bg-main py-2 px-10 rounded text-center text-second"
           >
-            <button id="swissra" className="text-xl">
+            <button id="ibm" className="text-xl">
               التالـــي
             </button>
           </Link>
@@ -71,7 +72,7 @@ const Hero = () => {
           transition={{ duration: 3 }}
         >
           <div
-            className="flex justify-between min-w-96 pt-4 text-third px-6"
+            className="flex justify-between min-w-96 text-third px-6"
             id="swissra"
           >
             <p>نصائح</p>
