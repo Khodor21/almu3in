@@ -6,7 +6,7 @@ import { MdQuiz } from "react-icons/md";
 import Quiz from "../assets/quiz.png";
 import Advice from "../assets/advice.png";
 import Summarize from "../assets/paper.png";
-import Book from "../assets/Book.png";
+import Book from "../assets/book.png";
 import Image from "next/image";
 // Top Navbar
 const TopNavbar = () => {
