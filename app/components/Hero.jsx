@@ -29,9 +29,9 @@ const Hero = () => {
   };
 
   return (
-    <div className="bg-second" style={heroStyle}>
+    <div className="h-screen" style={heroStyle}>
       <Navbar />
-      <div className="flex flex-col gap-20 justify-center items-center h-screen ">
+      <div className="flex flex-col gap-20 justify-center items-center h-full">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -64,25 +64,29 @@ const Hero = () => {
           >
             <Link
               href="/sections"
-              className="bg-second  p-2 rounded w-[50%] text-center text-main"
+              className="bg-second p-2 rounded text-center text-main"
             >
               <button id="swissra">التالـــي</button>
             </Link>{" "}
           </motion.div>
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={firstVariants}
-            transition={{ duration: 3 }}
-          >
-            <div className="flex gap-12 pt-4 text-second" id="swissra">
-              <p>نصائح</p>
-              <p>تلخيصات</p>
-              <p>مقالات</p>
-              <p>تحدّي</p>
-            </div>{" "}
-          </motion.div>
         </div>
+
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={firstVariants}
+          transition={{ duration: 3 }}
+        >
+          <div
+            className="flex justify-between min-w-96 pt-4 text-second"
+            id="swissra"
+          >
+            <p>نصائح</p>
+            <p>تلخيصات</p>
+            <p>مقالات</p>
+            <p>تحدّي</p>
+          </div>
+        </motion.div>
       </div>
     </div>
   );
