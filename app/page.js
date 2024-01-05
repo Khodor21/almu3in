@@ -3,7 +3,7 @@ import Hero from "./components/Hero";
 
 const page = () => {
   return (
-    <div>
+    <div className="md:hidden block">
       <Hero />
     </div>
   );
