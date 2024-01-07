@@ -2,7 +2,6 @@
 import React from "react";
 import Navbar from "./Navbar";
 import Image from "next/image";
-import Text from "../assets/MainText.svg";
 import Book from "../assets/MainImage.svg";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -58,7 +57,7 @@ const Hero = () => {
           <Link
             width={400}
             href="/sections"
-            className="bg-main py-2 px-10 rounded text-center text-second"
+            className="bg-main hover:border-2  hover:bg-second hover:text-main hover:shadow-xl py-2 px-10 rounded text-center text-second"
           >
             <button id="ibm" className="text-xl">
               التالـــي

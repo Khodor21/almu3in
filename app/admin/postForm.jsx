@@ -33,6 +33,7 @@ const PostForm = () => {
       toast.error("حدث خطأ غير متوقع!");
     }
   };
+  const formattedArticle = article.replace(/\n/g, "<br>");
 
   return (
     <div className="bg-second h-full py-4">
@@ -76,7 +77,7 @@ const PostForm = () => {
             <textarea
               name="article"
               id="swissra"
-              value={article}
+              value={formattedArticle}
               onChange={(e) => setArticle(e.target.value)}
               rows="10"
               className="text-right border-2 text-main rounded-lg py-2 px-4"

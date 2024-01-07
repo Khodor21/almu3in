@@ -12,7 +12,7 @@ module.exports = {
         second: "#F2F1DF",
         third: "#A39771",
         white: "#ffff",
-        red: "#FF0000",
+        red: "#C7544A",
         gray: "#808080",
         blue: "#3B82F6",
       },

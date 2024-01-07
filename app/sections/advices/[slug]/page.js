@@ -1,6 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
+import { FaArrowLeft } from "react-icons/fa";
 import axios from "axios";
+import Link from "next/link";
+import BottomNavbar from "../../BottomNavbar";
 
 export default function Doc({ params }) {
   const id = params.slug;
@@ -17,18 +20,25 @@ export default function Doc({ params }) {
       });
   }, [id]);
   return (
-    <div className="bg-second min-h-screen text-center pt-4">
-      <div className="flex flex-col gap-4">
-        <h1 id="swissra" className="text-main">
-          {blog.title}
-        </h1>
+    <div className="bg-second min-h-screen text-right">
+      <div className="flex flex-col gap-4 pt-6 px-6">
+        <div className="flex justify-between">
+          <Link href="/sections/advices">
+            <FaArrowLeft className="w-6 h-6 text-second bg-main p-1 rounded-full" />
+          </Link>
+          <h1 id="swissra" className="text-main text-center">
+            {blog.title}
+          </h1>
+        </div>
+
         <p id="ibmBold" className="text-third">
           {blog.subtitle}
         </p>
       </div>
-      <div className="my-4 mx-2" id="swissra">
-        <p className="mt-2">{blog.article}</p>
+      <div id="jazeera" className="mt-2 mb-20 px-6">
+        <p className="text-area">{blog.article}</p>
       </div>
+      <BottomNavbar />
     </div>
   );
 }
