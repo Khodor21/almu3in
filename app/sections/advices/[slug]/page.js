@@ -36,7 +36,9 @@ export default function Doc({ params }) {
         </p>
       </div>
       <div id="jazeera" className="mt-2 mb-20 px-6">
-        <p className="text-area">{blog.article}</p>
+        <p className="text-area my-lh-1.8" dir="rtl">
+          {blog.article}
+        </p>
       </div>
       <BottomNavbar />
     </div>

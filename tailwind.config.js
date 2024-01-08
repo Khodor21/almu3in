@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      lineHeight: {
+        "my-lh-1.8": "1.8",
+      },
       colors: {
         main: "#43695A",
         second: "#F2F1DF",
