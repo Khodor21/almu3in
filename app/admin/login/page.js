@@ -35,52 +35,49 @@ const Login = () => {
   };
 
   return (
-    <div className="bg-second h-full py-4 flex items-center justify-center">
-      <div className="bg-white rounded-lg p-8 shadow-md w-4/12">
-        <h1 className="text-2xl font-semibold mb-6 text-center">
+    <div className="bg-second h-full py-4 text-center">
+      <div className="flex flex-col gap-4 mt-6">
+        <h1 id="swissra" className="text-main">
           تسجيل الدخول
         </h1>
         <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label
-              htmlFor="username"
-              className="block text-gray-700 font-bold mb-2"
+          <div className="flex flex-col gap-4 mt-10">
+            <div className="mb-4 flex flex-col gap-2 text-right mx-10">
+              <label htmlFor="username" id="ibmBold" className="text-main">
+                اسم المُستخدِم
+              </label>
+              <input
+                type="text"
+                name="username"
+                id="username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+                className="text-left border-2 text-main rounded-lg py-2 px-4"
+              />
+            </div>
+            <div className="mb-4 flex flex-col gap-2 text-right mx-10">
+              <label htmlFor="password" className="text-main" id="ibmBold">
+                كلمة المرور
+              </label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                className="text-left border-2 text-main rounded-lg py-2 px-4"
+              />
+            </div>
+            <button
+              id="ibmBold"
+              type="submit"
+              className="bg-main text-white rounded-lg py-2 px-4 w-[50%] mx-auto"
             >
-              اسم المُستخدِم
-            </label>
-            <input
-              type="text"
-              name="username"
-              id="username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              required
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
+              تسجيل الدخول
+            </button>
           </div>
-          <div className="mb-6">
-            <label
-              htmlFor="password"
-              className="block text-gray-700 font-bold mb-2"
-            >
-              كلمة المرور
-            </label>
-            <input
-              type="password"
-              name="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
-          <button
-            type="submit"
-            className="bg-main text-white rounded-lg py-2 px-4 w-full"
-          >
-            تسجيل الدخول
-          </button>
         </form>
       </div>
     </div>
