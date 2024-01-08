@@ -39,7 +39,6 @@ const advice = () => {
             duration: 0.5,
             ease: [0, 0.71, 0.2, 1.01],
           }}
-          className=""
         >
           <div className="flex flex-col gap-4 px-6">
             <div className="flex justify-between">
@@ -52,7 +51,7 @@ const advice = () => {
             </div>
             <p id="ibmBold" className="text-third">
               جمعنا لك هنا نصائح لتكون لَكَ إن شاء الله خيرُ معينٍ في طريق
-              الثَبات و طلب اعلم
+              الثَبات و طلب العلم
             </p>
           </div>
         </motion.div>

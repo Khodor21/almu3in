@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-const PostForm = () => {
+const AdvicePost = () => {
   const [title, setTitle] = useState("");
   const [subtitle, setSubtitle] = useState("");
   const [article, setArticle] = useState("");
@@ -24,13 +24,13 @@ const PostForm = () => {
       );
 
       if (response.status === 201) {
-        toast.success("تم إنشاء المنشور بنجاح!");
+        toast.success("!تم إنشاء مقال بنجاح");
       } else {
-        toast.error("حدث خطأ ما أثناء إنشاء المنشور!");
+        toast.error("!حدث خطأ ما أثناء إنشاء مقال");
       }
     } catch (err) {
       console.error(err);
-      toast.error("حدث خطأ غير متوقع!");
+      toast.error("!حدث خطأ غير متوقع");
     }
   };
 
@@ -95,4 +95,4 @@ const PostForm = () => {
   );
 };
 
-export default PostForm;
+export default AdvicePost;

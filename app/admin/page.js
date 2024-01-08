@@ -1,11 +1,13 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import PostForm from "./postForm";
+import AdvicePost from "./postAdvice";
+import AdviceBlog from "./postBlog";
 
 export default function page() {
   const router = useRouter();
   const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [activeComponent, setActiveComponent] = useState("");
 
   async function validateCredentials(username, password) {
     const response = await fetch(
@@ -58,7 +60,25 @@ export default function page() {
         <p id="ibmBold" className="text-third">
           تظهر هذه الصفحة فقط للمشرفين، لتُسهّل عليهم إضافة المعلومات إلى الموقع{" "}
         </p>
-        <PostForm />
+        <div
+          id="swissra"
+          className="flex justify-center items-center text-center mt-4 gap-4"
+        >
+          <button
+            className="hover:bg-white px-4 py-2 rounded hover:text-main bg-main text-second"
+            onClick={() => setActiveComponent("AdvicePost")}
+          >
+            إضافة نصائح
+          </button>
+          <button
+            className="hover:bg-white px-4 py-2 rounded hover:text-main bg-main text-second"
+            onClick={() => setActiveComponent("AdviceBlog")}
+          >
+            إضافة مدونة
+          </button>
+        </div>
+        {activeComponent === "AdvicePost" && <AdvicePost />}
+        {activeComponent === "AdviceBlog" && <AdviceBlog />}
       </div>
     </div>
   );
