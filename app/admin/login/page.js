@@ -33,7 +33,14 @@ const Login = () => {
       alert("An error occurred during login");
     }
   };
-
+  function togglePasswordVisibility(passwordId) {
+    const passwordField = document.getElementById(passwordId);
+    if (passwordField.type === "password") {
+      passwordField.type = "text";
+    } else {
+      passwordField.type = "password";
+    }
+  }
   return (
     <div className="bg-second h-full py-4 text-center">
       <div className="flex flex-col gap-4 mt-6">
@@ -69,6 +76,10 @@ const Login = () => {
                 required
                 className="text-left border-2 text-main rounded-lg py-2 px-4"
               />
+              <i
+                className="bi bi-eye-slash"
+                onClick={() => togglePasswordVisibility("password")}
+              ></i>
             </div>
             <button
               id="ibmBold"
