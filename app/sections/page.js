@@ -64,24 +64,28 @@ const SectionsPage = () => {
             title="نصائِـحُ المُعين"
             linkTitle="النصائح"
             linkHref="/sections/advices"
+            alt="نصائح"
           />
           <ServiceItem
             image={Summarize}
             title="ملخّصات المُعين"
             linkTitle="الملخصّات"
             linkHref="/sections/summarizes"
+            alt="تلخيص"
           />
           <ServiceItem
             image={Book}
             title="مقالات المُعين"
             linkTitle="المقالات"
             linkHref="/sections/blogs"
+            alt="مقال"
           />
           <ServiceItem
             image={Quiz}
             title="تحدّي المُعين"
             linkTitle="التحدي"
             linkHref="/sections/quiz"
+            alt="تحدي"
           />
         </div>
       </div>
