@@ -60,6 +60,20 @@ const SectionsPage = () => {
       <div className="bg-second pb-20 md:pb-0">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mx-10 pt-8">
           <ServiceItem
+            image={Quiz}
+            title="تحدّي المُعين"
+            linkTitle="التحدي"
+            linkHref="/sections/quiz"
+            alt="تحدي"
+          />
+          <ServiceItem
+            image={Book}
+            title="مقالات المُعين"
+            linkTitle="المقالات"
+            linkHref="/sections/blogs"
+            alt="مقال"
+          />
+          <ServiceItem
             image={Advice}
             title="نصائِـحُ المُعين"
             linkTitle="النصائح"
@@ -72,20 +86,6 @@ const SectionsPage = () => {
             linkTitle="الملخصّات"
             linkHref="/sections/summarizes"
             alt="تلخيص"
-          />
-          <ServiceItem
-            image={Book}
-            title="مقالات المُعين"
-            linkTitle="المقالات"
-            linkHref="/sections/blogs"
-            alt="مقال"
-          />
-          <ServiceItem
-            image={Quiz}
-            title="تحدّي المُعين"
-            linkTitle="التحدي"
-            linkHref="/sections/quiz"
-            alt="تحدي"
           />
         </div>
       </div>
