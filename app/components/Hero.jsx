@@ -7,14 +7,18 @@ import Link from "next/link";
 import Book from "../assets/MainImage.svg";
 import { motion } from "framer-motion";
 import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Hero = () => {
   const [message, setMessage] = useState("");
   const onSend = async (e) => {
+    e.preventDefault();
     try {
-      const response = axios.post(
+      const response = await axios.post(
         "https://almu3in-server.vercel.app/api/message",
-        message
+        {
+          message,
+        }
       );
       if (response.status === 201) {
         toast.success("!تم إنشاء مقال بنجاح");
@@ -34,13 +38,10 @@ const Hero = () => {
     hidden: { opacity: 0, x: 50 },
     visible: { opacity: 1, x: 0 },
   };
-  const thirdVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0 },
-  };
 
   return (
     <div className="h-full bg-second ">
+      <ToastContainer />
       <Navbar />
       <div className="flex flex-col gap-10 justify-center items-center h-full mx-4">
         <motion.div
@@ -49,7 +50,7 @@ const Hero = () => {
           transition={{ duration: 1 }}
           className="flex flex-col gap-6 justify-center items-center"
         >
-          <Image className="w-88" src={Book} priority alt="text" layout="/" />
+          <Image layout="/" className="w-88" src={Book} priority alt="text" />
         </motion.div>
         <div className="flex flex-col gap-6 items-center">
           <motion.div
@@ -92,18 +93,13 @@ const Hero = () => {
           <form onSubmit={onSend}>
             {" "}
             <div className="flex flex-col gap-2 text-right mx-2">
-              <label
-                htmlFor="subtitle"
-                className="text-main w-full"
-                id="swissra"
-              >
+              <label className="text-main w-full" id="swissra">
                 أفكارك وملاحظاتك تساعدنا على التطور{" "}
               </label>
               <input
                 type="text"
-                name="subtitle"
+                name="message"
                 id="swissra"
-                value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 className="text-right border-2 text-main rounded-lg py-2 px-2 shadow-xl placeholder:text-main/80"
                 placeholder="بانتظار أفكارك أو ملاحظاتك"
