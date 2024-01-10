@@ -12,7 +12,7 @@ const Hero = () => {
   const [message, setMessage] = useState("");
   const onSend = async (e) => {
     try {
-      const sendMessage = axios.post(
+      const response = axios.post(
         "https://almu3in-server.vercel.app/api/message",
         message
       );
