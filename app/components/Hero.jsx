@@ -1,12 +1,31 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
+import axios from "axios";
 import Image from "next/image";
-import Book from "../assets/MainImage.svg";
 import Link from "next/link";
+import Book from "../assets/MainImage.svg";
 import { motion } from "framer-motion";
+import { ToastContainer, toast } from "react-toastify";
 
 const Hero = () => {
+  const [message, setMessage] = useState("");
+  const onSend = async (e) => {
+    try {
+      const sendMessage = axios.post(
+        "https://almu3in-server.vercel.app/api/message",
+        message
+      );
+      if (response.status === 201) {
+        toast.success("!تم إنشاء مقال بنجاح");
+      } else {
+        toast.error("!حدث خطأ ما أثناء إنشاء مقال");
+      }
+    } catch (err) {
+      console.error(err);
+      toast.error("!حدث خطأ غير متوقع");
+    }
+  };
   const firstVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0 },
@@ -21,7 +40,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="h-screen bg-second ">
+    <div className="h-full bg-second ">
       <Navbar />
       <div className="flex flex-col gap-10 justify-center items-center h-full mx-4">
         <motion.div
@@ -70,15 +89,33 @@ const Hero = () => {
           variants={firstVariants}
           transition={{ duration: 3 }}
         >
-          <div
-            className="flex justify-between min-w-96 text-third px-6"
-            id="swissra"
-          >
-            <p>نصائح</p>
-            <p>تلخيصات</p>
-            <p>مقالات</p>
-            <p>تحدّي</p>
-          </div>
+          <form onSubmit={onSend}>
+            {" "}
+            <div className="flex flex-col gap-2 text-right mx-2">
+              <label
+                htmlFor="subtitle"
+                className="text-main w-full"
+                id="swissra"
+              >
+                أفكارك وملاحظاتك تساعدنا على التطور{" "}
+              </label>
+              <input
+                type="text"
+                name="subtitle"
+                id="swissra"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                className="text-right border-2 text-main rounded-lg py-2 px-2 shadow-xl placeholder:text-main/80"
+                placeholder="بانتظار أفكارك أو ملاحظاتك"
+              />
+              <button
+                id="ibmBold"
+                className="bg-third text-second w-full rounded p-2 shadow"
+              >
+                إرســــــــــــــــــــال
+              </button>{" "}
+            </div>
+          </form>
         </motion.div>
       </div>
     </div>

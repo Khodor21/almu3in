@@ -34,7 +34,7 @@ const Navbar = () => {
             </div>
             <div>
               <button className="bg-main rounded-xl shadow-xl text-second flex hover:bg-second hover:text-main hover:border-2">
-                <Link href="tel:+961-71708103">
+                <Link href="https://t.me/islamicwritess">
                   <p
                     className="my-2 md:my-4 mx-4 md:mx-6 flex gap-1 text-lg"
                     id="swissra"
