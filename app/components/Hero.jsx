@@ -21,9 +21,9 @@ const Hero = () => {
         }
       );
       if (response.status === 201) {
-        toast.success("!تم إنشاء مقال بنجاح");
+        toast.success("!تم إرسال رسالة بنجاح");
       } else {
-        toast.error("!حدث خطأ ما أثناء إنشاء مقال");
+        toast.error("!حدث خطأ ما أثناء إرسال رسالة");
       }
     } catch (err) {
       console.error(err);

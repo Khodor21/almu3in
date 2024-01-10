@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import AdvicePost from "./postAdvice";
 import AdviceBlog from "./postBlog";
+import GetMsgs from "./getMessages";
 
 export default function page() {
   const router = useRouter();
@@ -62,23 +63,30 @@ export default function page() {
         </p>
         <div
           id="swissra"
-          className="flex justify-center items-center text-center mt-4 gap-4"
+          className="flex justify-center items-center text-center mt-4 mx-2 gap-4"
         >
           <button
-            className="hover:bg-white px-4 py-2 rounded hover:text-main bg-main text-second"
+            className="hover:bg-white px-2 py-2 rounded hover:text-main bg-main text-second"
             onClick={() => setActiveComponent("AdvicePost")}
           >
             إضافة نصائح
           </button>
           <button
-            className="hover:bg-white px-4 py-2 rounded hover:text-main bg-main text-second"
+            className="hover:bg-white px-2 py-2 rounded hover:text-main bg-main text-second"
             onClick={() => setActiveComponent("AdviceBlog")}
           >
             إضافة مدونة
           </button>
+          <button
+            className="hover:bg-white px-2 py-2 rounded hover:text-main bg-main text-second"
+            onClick={() => setActiveComponent("GetMsgs")}
+          >
+            عرض الرسائل
+          </button>
         </div>
         {activeComponent === "AdvicePost" && <AdvicePost />}
         {activeComponent === "AdviceBlog" && <AdviceBlog />}
+        {activeComponent === "GetMsgs" && <GetMsgs />}
       </div>
     </div>
   );
